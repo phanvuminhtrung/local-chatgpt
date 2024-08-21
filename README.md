@@ -1,37 +1,45 @@
 # ChatGPT Demo Project
 
 ## Author
-Troy Phan - https://troyphan.com/
+Troy Phan - [https://troyphan.com/](https://troyphan.com/)
 
 ## Project Structure
 
-- **index.html**: The main frontend file using Vue.js to interact with the ChatGPT API via your backend.
-- **files/**: Directory containing necessary frontend libraries (Axios, TailwindCSS, Vue.js).
-- **server.js**: Node.js backend to securely handle requests to the OpenAI API.
+- **public/index.html**: The main frontend file using Vue.js to interact with the ChatGPT API via your backend.
+- **public/files/**: Directory containing necessary frontend libraries (Axios, TailwindCSS, Vue.js).
+- **netlify/functions/chat.js**: Netlify Function to handle requests securely to the OpenAI API.
 - **.env**: Environment file storing sensitive API keys and endpoint URLs.
+- **netlify.toml**: Configuration file for Netlify, defining build and development settings.
 
 ## Setup Instructions
-1. **Install Dependencies**:
+
+### 1. **Install Dependencies**
+   Ensure you have Node.js installed, then run:
     ```bash
     npm install
     ```
 
-2. **Rename `.env.default` File**:
-    - Rename to `.env` file in the root directory with your OpenAI API key:
-      ```env
-      CHAT_GPT_KEY=your-chatgpt-api-key
-      OPEN_AI_ENDPOINT=https://api.openai.com/v1
-      ```
+### 2. **Rename `.env.default` File**
+   - Rename `.env.default` to `.env` in the root directory and fill it with your OpenAI API key:
+     ```env
+     CHAT_GPT_KEY=your-chatgpt-api-key
+     OPEN_AI_ENDPOINT=https://api.openai.com/v1
+     ```
 
-3. **Run the Backend**:
+### 3. **Run the Project Locally**
+   Use Netlify CLI to simulate the environment locally:
     ```bash
-    node server.js
+    netlify dev
     ```
+   - This command serves your static files and Netlify Functions locally.
 
-4. **Access the Application**:
-    - Serve your `index.html` using a simple HTTP server or integrate with your backend:
-    - Open `http://localhost:8000` in your browser to start using the ChatGPT demo.
+### 4. **Access the Application**
+   - After running `netlify dev`, open `http://localhost:8888` in your browser to start using the ChatGPT demo.
 
 ## Usage
 - Type your message into the input field and press "Send".
-- The backend will process your request and return a response from the ChatGPT model.
+- The frontend will send your input to the backend, which processes the request using the ChatGPT API and returns a response.
+
+## Deployment
+- Push your code to a GitHub repository and link it to your Netlify project for continuous deployment.
+- Make sure your environment variables are set in the Netlify dashboard for production use.
