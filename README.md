@@ -1,4 +1,4 @@
-# ChatGPT Demo Project
+# ChatBot
 
 ## Author
 Troy Phan - [https://troyphan.com/](https://troyphan.com/)
@@ -10,6 +10,33 @@ Troy Phan - [https://troyphan.com/](https://troyphan.com/)
 - **netlify/functions/chat.js**: Netlify Function to handle requests securely to the OpenAI API.
 - **.env**: Environment file storing sensitive API keys and endpoint URLs.
 - **netlify.toml**: Configuration file for Netlify, defining build and development settings.
+
+## Technologies Used
+
+### 1. Frontend Technologies
+
+- **HTML**: Used to structure the web page.
+- **Vue.js**: A JavaScript framework for building the user interface, managing input, interaction, and state of the chatbot.
+- **Tailwind CSS**: A utility-first CSS framework used for styling the user interface with predefined classes.
+- **Axios**: A promise-based HTTP client used for making API requests from the frontend to the backend.
+
+### 2. Backend Technologies
+
+- **Node.js**: The JavaScript runtime environment for executing backend logic in Netlify Functions.
+- **Netlify Functions**: Serverless functions for running backend code in response to HTTP requests.
+- **Axios**: Also used on the backend to send requests to the OpenAI API.
+- **dotenv**: A module for loading environment variables from a `.env` file into `process.env` for secure configuration.
+
+### 3. Environment and Deployment
+
+- **Netlify**: A platform for deploying static sites and serverless functions with continuous deployment support.
+- **Netlify CLI**: A command-line tool for developing and testing the Netlify deployment locally.
+- **Environment Variables (.env)**: Used to store sensitive data such as API keys, ensuring they are not hardcoded into the codebase.
+
+### 4. Version Control
+
+- **Git**: A distributed version control system for managing source code history and collaboration.
+- **GitHub**: A platform for hosting Git repositories, supporting collaboration, version control, and integration with deployment services like Netlify.
 
 ## Setup Instructions
 
