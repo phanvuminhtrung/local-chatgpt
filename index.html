@@ -69,20 +69,18 @@
     </div>
   </main>
 </body>
+
+
+<!-- Setup/Send request to OpenAI API to use the gpt modal. Then capture the response -->
 <script>
   const {
     createApp,
     ref
   } = Vue;
 
-  // Real GPT
-  // const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1'
-
-  // Security, do not deploy this in production
-  const chatGPTKey = 'sk-*****'; // Create an API key from here
-
-  // Local GPT
-  // const OPEN_AI_ENDPOINT = 'http://localhost:8000/v1'
+  // Define Endpoint and API Key
+  const OPEN_AI_ENDPOINT = 'https://api.openai.com/v1'
+  const chatGPTKey = ''; 
 
   createApp({
     setup() {
@@ -92,9 +90,6 @@
         content: "You're a helpful chat bot. Answer short and concise in 150 tokens only."
       }]);
       const isLoading = ref(false);
-
-
-
 
       const messageClasses = (role) => ({
         'text-right justify-end': role === 'user',
@@ -117,8 +112,8 @@
           // Send API request to OpenAI endpoint
           const response = await axios.post(
             `${OPEN_AI_ENDPOINT}/chat/completions`, {
-              // model: 'gpt-3.5-turbo',
-              model: 'gpt-4-1106-preview',
+              model: 'gpt-3.5-turbo',
+              // model: 'gpt-4-1106-preview',
               messages: messages.value,
               temperature: 0.9,
               max_tokens: 150,
