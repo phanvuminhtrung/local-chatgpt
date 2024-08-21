@@ -87,25 +87,23 @@
       async function sendMessage() {
         if (!userInput.value.trim()) return;
 
-        // Append user message
         messages.value.push({
           role: 'user',
           content: userInput.value
         });
 
         try {
-          isLoading.value = true
+          isLoading.value = true;
           userInput.value = '';
 
-          // Send API request to your backend
-          const response = await axios.post('/api/chat', {
+          // Call the Netlify Function instead of the Express server
+          const response = await axios.post('/.netlify/functions/chat', {
             prompt: messages.value.map(m => m.content).join('\n')
           });
 
-          // Append ChatGPT response
           messages.value.push({
             role: 'assistant',
-            content: response.data
+            content: response.data.message
           });
         } catch (error) {
           console.error('There was an error with the API request', error);
