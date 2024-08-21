@@ -1,4 +1,12 @@
+# Node.js dependencies
+node_modules/
 *.bin
-*.gguf
+
+# Machine-specific files
 .DS_Store
+
+# Environment variables
 .env
+
+# Model files
+*.gguf

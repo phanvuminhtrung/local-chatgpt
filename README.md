@@ -1,51 +1,36 @@
-# Running the Chat Application
+# ChatGPT Demo Project
 
-This guide will help you run the chat application contained in the `index.html` file.
+## Project Structure
 
-## Prerequisites
+- **index.html**: The main frontend file using Vue.js to interact with the ChatGPT API via your backend.
+- **files/**: Directory containing necessary frontend libraries (Axios, TailwindCSS, Vue.js).
+- **server.js**: Node.js backend to securely handle requests to the OpenAI API.
+- **.env**: Environment file storing sensitive API keys and endpoint URLs.
 
-Ensure you have the following:
+## Setup Instructions
 
-- A modern web browser (Chrome, Firefox, Safari, etc.)
-- A local web server such as Node's http-server. Or you can use Live Server feature from VSCode
-- An API key from OpenAI for API access. 
+1. **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-## Start the app using OpenAI API
+2. **Create `.env` File**:
+    - Create a `.env` file in the root directory with your OpenAI API key:
+      ```env
+      CHAT_GPT_KEY=your-chatgpt-api-key
+      OPEN_AI_ENDPOINT=https://api.openai.com/v1
+      ```
 
-1. **Set up the API key**
+3. **Run the Backend**:
+    ```bash
+    node server.js
+    ```
 
-Open the `index.html` file and locate the following line:
+4. **Access the Application**:
+    - Serve your `index.html` using a simple HTTP server or integrate with your backend:
+    - Open `http://localhost:3000` in your browser to start using the ChatGPT demo.
 
-```html
-const chatGPTKey = 'sk-'; // Paste the API key here
-```
+## Usage
 
-Replace `'sk-*****'` with your actual OpenAI GPT-3 API key.
-
-2. **Start the local server**
-
-Navigate to the directory containing `index.html` and start your local server. 
-
-For example, if you're using Python's SimpleHTTPServer, you can start it with the command:
-
-```bash
-python -m SimpleHTTPServer
-```
-
-If you're using Node's http-server, you can start it with the command:
-
-```bash
-http-server
-```
-
-3. **Access the application**
-
-Open your web browser and navigate to localhost on the port your server is running. For example, if your server is running on port 8000, you would navigate to `http://localhost:8000`.
-
-4. **Interact with the chat application**
-
-You should now see the chat interface in your browser. You can type messages into the input field and press "Send" to interact with the chatbot.
-
-Please note that this is a simple setup meant for local development and testing. 
-
-It is not suitable for a production environment.
+- Type your message into the input field and press "Send".
+- The backend will process your request and return a response from the ChatGPT model.
