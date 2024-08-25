@@ -3,7 +3,6 @@
 ## Author
 Troy Phan - [https://troyphan.com/](https://troyphan.com/)
 
-
 ## Project Structure
 
 - **public/index.html**: The main frontend file using Vue.js to interact with the ChatGPT API via your backend.
